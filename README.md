@@ -1,7 +1,7 @@
-# iTunes with React and Axios
+# iTunes with React, Redux, Promise Middleware and Axios
 
 
-Search the iTunes API and render the results.
+Search the iTunes API using Redux Promise Middleware and render the results.
 
 ## Table of Contents
 

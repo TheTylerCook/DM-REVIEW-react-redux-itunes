@@ -1,23 +1,45 @@
-import React from 'react'
+import React from 'react';
+import ResultRow from './ResultRow';
 
 
-export default function Results(props) {
-	return (
 
-			//04: plug each prop into it's appropriate table cell (<td>)
-			<tr>
-				<td>
-					<button>
-						<a href={props.preview} target="_blank">Play</a>
-					</button>
-				</td>
-				<td>{props.song}</td>
-				<td>{props.artist}</td>
-				<td>{props.collection}</td>
-				<td><img src ={props.albumArt} alt="Album Cover"/></td>
-				<td>{props.type}</td>
-				<td>${props.singlePrice}</td>
-				<td>${props.collectionPrice}</td>
-			</tr>
-	)
+const Results = (props) => {
+
+    const resultsArr = props.results ? 
+        props.results.map((c, i) => {
+        return (
+            <ResultRow key={i}
+                    preview={c.previewUrl}
+                    song={c.trackName}
+                    artist={c.artistName}
+                    collection={c.collectionName}
+                    albumArt={c.artworkUrl60}
+                    type={c.kind}
+                    singlePrice={c.trackPrice}
+                    collectionPrice={c.collectionPrice }
+                />
+        )
+        }) : null;
+
+    return (
+        <div className="results-container">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Play</th>
+                        <th>Song</th>
+                        <th>Artist</th>
+                        <th>Collection</th>
+                        <th>Album Art</th>
+                        <th>Type</th>
+                        <th>Single Price</th>
+                        <th>Collection Price</th>
+                    </tr>
+                    {resultsArr}
+                </tbody>
+            </table>
+        </div>
+    )
 }
+
+export default Results;

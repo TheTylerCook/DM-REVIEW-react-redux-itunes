@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from  '../../assets/itunes-logo.png'
+import logo from  '../../../assets/itunes-logo.png'
 import './Logo.css'
 
 

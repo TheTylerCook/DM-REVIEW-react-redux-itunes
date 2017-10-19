@@ -4,7 +4,7 @@
 	height:100vh;
 }
 
-.search-container {
+.header-wrap {
 	background: #FFFFFF;
 	height: 20vh;
 	display: flex;
@@ -14,7 +14,7 @@
 }
 
 input {
-	width: 35%;
+	width: 75%;
 	margin-right: 50px;
 	height: 3vh;
 	border: none;

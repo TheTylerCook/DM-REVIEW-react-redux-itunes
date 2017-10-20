@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import {connect} from 'react-redux';
+import {getResults} from './../../../redux/main_reducer';
 
 
 class Search extends Component {
@@ -17,10 +18,7 @@ class Search extends Component {
       
     handleSearch(e){
         if(e.keyCode === 13){
-            axios.get(`https://itunes.apple.com/search?term=${this.state.searchTerm}`)
-            .then(res => {
-                console.log(res)
-            })
+            this.props.getResults(this.state.searchTerm)
             this.setState({
                 searchTerm: ''
             })
@@ -32,6 +30,7 @@ class Search extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div>
                 <input placeholder="Search iTunes"
@@ -43,4 +42,8 @@ class Search extends Component {
     }
 }
 
-export default Search;
+const mapStateToProps = (state) => {
+    return state;
+}
+
+export default connect(mapStateToProps, {getResults})(Search);

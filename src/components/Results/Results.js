@@ -1,5 +1,6 @@
 import React from 'react';
 import ResultRow from './ResultRow';
+import {connect} from 'react-redux';
 
 
 
@@ -42,4 +43,8 @@ const Results = (props) => {
     )
 }
 
-export default Results;
+const mapStateToProps = (state) => {
+    return state;
+}
+
+export default connect(mapStateToProps)(Results);

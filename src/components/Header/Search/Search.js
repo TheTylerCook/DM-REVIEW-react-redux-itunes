@@ -18,10 +18,12 @@ class Search extends Component {
       
     handleSearch(e){
         if(e.keyCode === 13){
+
+            //when we want to make our request, we dispatch the action passing in any
+            //parameters we'll use:
             this.props.getResults(this.state.searchTerm)
-            this.setState({
-                searchTerm: ''
-            })
+
+            this.setState({searchTerm: ''})
         }
     }
     
